@@ -33,5 +33,6 @@ public class 二分 {
             }else
                 right = mid ;    //target在mid的左边即[left,mid)
         }
+        return -1;
     }
 }
