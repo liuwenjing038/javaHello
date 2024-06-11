@@ -22,7 +22,7 @@ public class 后续遍历 {
         res.add(root.val);
     }
 
-    //后序遍历左右中 入栈顺序中右左 出栈顺序中右左  最后反转
+    //后序遍历左右中 入栈顺序中左右 出栈顺序中右左  最后反转
     public List<Integer> postorderTraversal1(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if (root == null) return res;
@@ -31,8 +31,8 @@ public class 后续遍历 {
         while (!stack.isEmpty()){
             TreeNode node = stack.pop();
             res.add(node.val);
-            if (node.right != null) stack.push(node.right);
             if (node.left != null) stack.push(node.left);
+            if (node.right != null) stack.push(node.right);
         }
         Collections.reverse(res);
         return res;
