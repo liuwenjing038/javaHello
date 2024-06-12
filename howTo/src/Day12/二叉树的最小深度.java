@@ -24,4 +24,19 @@ public class 二叉树的最小深度 {
         }
         return depth;
     }
+
+    //递归写法
+    public int minDepth1(TreeNode root) {
+        if (root == null) return 0;
+        int leftHeight = minDepth1(root.left);
+        int rightHeight = minDepth1(root.right);
+        //单层处理逻辑,最小的深度需要注意左或右为空的情况不能直接比较
+        if (root.left == null && root.right != null){
+            return rightHeight+1;
+        }
+        if (root.left != null && root.right == null){
+            return leftHeight+1;
+        }
+        return Math.min(leftHeight,rightHeight)+1;
+    }
 }

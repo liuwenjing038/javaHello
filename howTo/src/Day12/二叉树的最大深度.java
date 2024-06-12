@@ -23,4 +23,16 @@ public class 二叉树的最大深度 {
         }
         return depth;
     }
+
+    //递归写法
+    public int maxDepth1(TreeNode root) {
+        if (root == null) return 0;
+        //使用后序遍历的写法
+        int leftHeight = maxDepth1(root.left);
+        int rightHeight = maxDepth1(root.right);
+        //单层逻辑
+        int height = Math.max(leftHeight, rightHeight) + 1;
+
+        return height;
+    }
 }
