@@ -1,7 +1,11 @@
 package Day24;
 
+import java.util.Arrays;
+
 public class 饼干分配 {
     public int findContentChildren(int[] g, int[] s) {
+        Arrays.sort(g);
+        Arrays.sort(s);
         int result = 0;
         int count = 0;
         //这里需要确认胃口数组不越界
